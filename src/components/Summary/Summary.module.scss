@@ -1,0 +1,82 @@
+@use '@styles/functions' as *;
+@use '@styles/variables' as *;
+@use '@styles/typography' as *;
+
+.container{
+  display:flex;
+  gap:16px;
+  margin-top:24px;
+  flex-wrap:wrap;
+}
+.card {
+    background: $card;
+  border-radius:8px;
+  padding:20px;
+  box-shadow: 0 4px 14px rgba(16,24,40,0.03);
+  min-width:80px;
+  flex:1;
+  p{ 
+    display:block; 
+    @include font(h2);
+    margin-top:8px;
+    color:$gray-secondary;
+    margin: 0;
+  }
+  &.total{
+  p{
+    color:white;
+  }
+}
+}
+.title{
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  @include font(h5);
+  color: $gray;
+  margin-bottom: 20px;
+}
+.arrow{
+  width: 19px;
+  height: 19px;
+
+}
+.total{
+  background: $green;
+  color: white;
+}
+@media (max-width:880px){
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto;
+}
+
+.total {
+  grid-column: span 2;  /* Faz o item 3 ocupar as duas colunas da linha abaixo */
+}
+.title{
+  font-size: 20px;
+  margin-bottom: 10px;
+
+}
+.arrow{
+  width: 14px;
+  height: 14px;
+}
+ .card {
+  p{ 
+    display:block; 
+    @include font(h4);
+    font-size: 20px;
+    margin-top:8px;
+    color:$gray-secondary;
+    margin: 0;
+  }
+  &.total{
+  p{
+    color:white;
+  }
+}
+}
+}

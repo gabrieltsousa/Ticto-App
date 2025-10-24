@@ -1,0 +1,160 @@
+@use "@styles/functions" as *;
+@use "@styles/variables" as *;
+
+.wrap {
+  margin-top: 28px;
+}
+.empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  font-size: 20px;
+  font-weight: 600;
+  color: $muted;
+}
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+.table thead th {
+  text-align: left;
+  color: $muted;
+  font-weight: 600;
+  padding: 8px 12px;
+}
+
+.row {
+  td {
+    border-left: none;
+    padding: 8px 12px;
+    background: white;
+
+    &:first-child {
+      border-top-left-radius: $radius;
+      border-bottom-left-radius: $radius;
+    }
+
+    &:last-child {
+      border-top-right-radius: $radius;
+      border-bottom-right-radius: $radius;
+    }
+    @media (max-width: 700px) {
+      border-bottom: 1px solid $gray-light;
+      &:first-child {
+        border-top-left-radius: $radius;
+        border-top-right-radius: $radius;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+
+      &:last-child {
+        background: $gray-light;
+        display: flex;
+        justify-content: center;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: $radius;
+        border-bottom-right-radius: $radius;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.trash {
+  button {
+    background: none;
+    border: none;
+    padding: 12px;
+    border-radius: $radius;
+    &:hover {
+      background-color: hover-lighten($muted, 80%);
+    }
+  }
+}
+.desc {
+  width: 45%;
+  color: $gray-tertiary;
+}
+.category {
+  color: $gray-tertiary;
+}
+.date {
+  color: $gray-tertiary;
+  width: 20%;
+}
+.income {
+  color: $green-secondary;
+  font-weight: 700;
+}
+.outcome {
+  color: $red;
+  font-weight: 700;
+}
+
+.mobileList {
+  position: relative;
+  background: $card;
+  padding: 14px 10px;
+  display: grid;
+  margin-bottom: 10px;
+  border-radius: $radius;
+  .list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .description {
+    color: $gray-tertiary;
+    font-size: 13px;
+  }
+  .date {
+    color: $gray-tertiary;
+    font-size: 13px;
+    text-wrap: nowrap;
+    width: auto;
+  }
+  .trash {
+    button {
+      background: $gray-light;
+      padding: 6;
+    }
+    position: absolute;
+    right: 8;
+    top: 10;
+  }
+  .income {
+    color: $green-secondary;
+    font-weight: 700;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-right: 35px;
+  }
+  .outcome {
+    color: $red;
+    font-weight: 700;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    margin-right: 35px;
+  }
+}
+
+.mobile {
+  display: none;
+}
+.desktop {
+  display: block;
+}
+@media (max-width: 700px) {
+  .mobile {
+    display: block;
+  }
+  .desktop {
+    display: none;
+  }
+}

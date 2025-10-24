@@ -1,0 +1,177 @@
+@use '@styles/functions' as *;
+@use '@styles/variables' as *;
+@use '@styles/typography' as *;
+
+.trigger {
+background: $purple-secondary;
+  color: $muted;
+  border: none;
+  padding: 12px 32px;
+  max-width: 400px;
+  width: 100%;
+  border-radius: $radius;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  transition: 0.2s;
+  &:hover { 
+    background-color: hover-lighten($purple-secondary);
+    color: $gray; 
+  }
+  @media (max-width:880px){
+  padding: 12px 28px;
+
+  }
+
+}
+.title{
+  color: $gray;
+  @include font(h4);
+  @media (max-width:880px){
+    font-size: 18px;
+  }
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 24, 39, 0.6);
+  z-index: 100;
+}
+
+.modal {
+  position: relative;
+  background: $card;
+  max-width: 600px;
+  width: 100%;
+  border-radius: $radius;
+  padding: 44px 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+    font-family: $font-secondary;
+
+
+
+
+  input {
+    padding: 12px;
+    border-radius: $radius;
+    border: 1px solid #e5e7eb;
+    font-family: $font-secondary;
+    font-size: 0.95rem;
+    background: #f9fafb;
+    transition: 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: $purple;
+      background: #fff;
+    }
+  }
+}
+
+.close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: $gray;
+}
+
+.types {
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+
+  .typeButton {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: $radius;
+    border: 2px solid #e5e7eb;
+    background: #f9fafb;
+    padding: 10px 0;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease-in-out;
+    color: $gray;
+
+    input {
+      display: none;
+    }
+
+    &:hover {
+      background: #f3f4f6;
+    }
+  }
+
+  .activeIncome {
+    border: 2px solid $green;
+    background: rgba($green, 0.1);
+  }
+
+  .activeOutcome {
+    border: 2px solid $red;
+    background: rgba($red, 0.1);
+  }
+}
+
+.submit {
+  margin-top: 8px;
+  background: $purple;
+  color: #fff;
+  border: none;
+  border-radius: $radius;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: $font-primary;
+  padding: 12px 0;
+  transition: 0.2s;
+
+  &:hover {
+    background: $purple-secondary;
+  }
+}
+
+@media (max-width: 520px) {
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  input {
+    padding: 12px;
+    border-radius: $radius;
+    border: 1px solid #e5e7eb;
+    background: #f9fafb;
+    font-family: $font-secondary;
+    font-size: 0.95rem;
+
+    &:focus {
+      outline: none;
+      border-color: $purple;
+      background: #fff;
+    }
+  }
+}
+
+.error {
+  font-size: 0.75rem;
+  color: $red;
+  font-family: $font-secondary;
+  margin-left: 4px;
+}

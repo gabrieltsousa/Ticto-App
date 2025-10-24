@@ -1,0 +1,9 @@
+@use "sass:color";
+
+@function hover-darken($color, $amount: 80%) {
+  @return color.mix(black, $color, $amount);
+}
+
+@function hover-lighten($color, $amount: 80%) {
+  @return color.mix(white, $color, $amount);
+}

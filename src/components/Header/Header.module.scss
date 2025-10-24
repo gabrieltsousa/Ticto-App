@@ -1,0 +1,28 @@
+@use '@styles/functions' as *;
+@use '@styles/variables' as *;
+
+.header{
+  background: $purple;
+  color: white;
+  padding: 60px 0;
+  margin-bottom: -70px;
+}
+.inner{
+  max-width:1280px;
+  margin:0 auto;
+  padding:0 24px;
+  gap: 20px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+.logo{
+  font-weight:700;
+  letter-spacing:1px;
+  font-size:20px;
+}
